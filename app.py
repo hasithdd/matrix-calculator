@@ -12,15 +12,12 @@ def calculate():
     matrix_string = request.form['matrix']
     operation = request.form['operation']
 
-    # Convert input string to numpy array
     matrix = np.array(eval(matrix_string))
 
-    # Perform operation
     if operation == 'transpose':
         result = np.transpose(matrix)
     elif operation == 'inverse':
         result = np.linalg.inv(matrix)
-    # Add more operations as needed...
 
     return render_template('result.html', result=result)
 
