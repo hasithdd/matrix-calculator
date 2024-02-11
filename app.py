@@ -15,7 +15,6 @@ def calculate():
         matrix_string = request.form['matrix']
         operation = request.form['operation']
 
-        # Safely evaluate the input matrix string
         matrix = np.array(ast.literal_eval(matrix_string))
 
         determinant = np.linalg.det(matrix)
