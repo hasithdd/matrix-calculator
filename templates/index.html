@@ -2,18 +2,89 @@
 <html>
 <head>
     <title>Matrix Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        select, input[type="submit"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <h1>Matrix Operations</h1>
-    <form action="/calculate" method="post">
-        <label for="matrix">Enter Matrix (in Python list format):</label><br>
-        <textarea id="matrix" name="matrix" rows="4" cols="50"></textarea><br>
-        <label for="operation">Select Operation:</label>
-        <select id="operation" name="operation">
-            <option value="transpose">Transpose</option>
-            <option value="inverse">Inverse</option>
-        </select><br>
-        <input type="submit" value="Calculate">
-    </form>
+    <div class="container">
+        <h1>Matrix Operations</h1>
+        <form action="/calculate" method="post">
+            <label for="matrix">Enter Matrix (in Python list format):</label>
+            <textarea id="matrix" name="matrix" rows="4" cols="50" placeholder="Example: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]"></textarea>
+            <label for="operation">Select Operation:</label>
+            <select id="operation" name="operation">
+                <option value="transpose">Transpose</option>
+                <option value="inverse">Inverse</option>
+            </select>
+            <input type="submit" value="Calculate">
+        </form>
+        {% if result %}
+        <div class="result">
+            <h2>Result</h2>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>
