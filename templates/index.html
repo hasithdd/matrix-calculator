@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrix Operations</title>
+</head>
+<body>
+    <h1>Matrix Operations</h1>
+    <form action="/calculate" method="post">
+        <label for="matrix">Enter Matrix (in Python list format):</label><br>
+        <textarea id="matrix" name="matrix" rows="4" cols="50"></textarea><br>
+        <label for="operation">Select Operation:</label>
+        <select id="operation" name="operation">
+            <option value="transpose">Transpose</option>
+            <option value="inverse">Inverse</option>
+            <!-- Add more options as needed -->
+        </select><br>
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>
